@@ -1,5 +1,6 @@
-const config = require("./config.json")
+const config = require("./config.json");
 const tmi = require("tmi.js");
+const commands = require("./js/commands/commands.js");
 
 const ops = {
     options: {
@@ -19,7 +20,14 @@ const client = new tmi.client(ops)
 
 client.on('message', (target, context, msg, self) => {
     if(self) return;
-    client.say(target, "Hello, World!");
+    msg = msg.toLowerCase()
+    console.log(commands.commands);
+    if(msg[0] == "!") {
+        parsed = msg.split(" ")[0];
+        parsed = parsed.replace('!', '');
+        console.log(parsed);
+        commands.executeCommand(parsed, client, target);
+    }
 });
 
 client.on('connection', (addr, port) => {
