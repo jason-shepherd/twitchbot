@@ -1,3 +1,9 @@
-module.exports = (client, target) => {
-    client.say(target, "Hello, World! This is the text response class!");
+const responses = require("./textResponses.json");
+
+exports.isTextResponse = (command) => {
+    return !!responses[command];
+}
+
+exports.execute = (twitch, command, args) => {
+    twitch.say(responses[command]);
 }
