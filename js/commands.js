@@ -7,9 +7,9 @@ fs.readdirSync("./js/commands").forEach(file => {
         commandModules[file.slice(0, -3).toLowerCase()] = require(`./commands/${file}`);
 });
 
-exports.executesCommand = (twitch, command, args) => {
+exports.executesCommand = (twitch, command, args, context) => {
     if(commandModules.textresponse.isTextResponse(command))
-        commandModules.textresponse.execute(twitch, command, args)
+        commandModules.textresponse.execute(twitch, command, args, context)
     if(commandModules[command])
-        commandModules[command].execute(twitch, command, args);
+        commandModules[command].execute(twitch, command, args, context);
 }

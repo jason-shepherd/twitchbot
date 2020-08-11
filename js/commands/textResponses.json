@@ -1,4 +1,5 @@
 {
-    "hello": "Hey there, bud.",
+    "hello": "Hey there, {{user}}.",
+    "hate" : "I hate {{args}}",
     "bot": "This bot is currently under development. It is written in NodeJS by yours truly and froggo. For more info visit https://github.com/jason-shepherd/twitchbot"
 }
