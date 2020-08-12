@@ -10,6 +10,6 @@ fs.readdirSync("./js/commands").forEach(file => {
 exports.executesCommand = (twitch, command, args, context) => {
     if(commandModules.textresponse.isTextResponse(command))
         commandModules.textresponse.execute(twitch, command, args, context)
-    if(commandModules[command])
-        commandModules[command].execute(twitch, command, args, context);
+    else if (commandModules[command])
+        commandModules[command].execute(twitch, command, args, context, commandModules);
 }

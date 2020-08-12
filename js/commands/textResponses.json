@@ -1,5 +1,9 @@
 {
     "hello": "Hey there, {{user}}.",
-    "hate" : "I hate {{args}}",
-    "bot": "This bot is currently under development. It is written in NodeJS by yours truly and froggo. For more info visit https://github.com/jason-shepherd/twitchbot"
+    "hate" : "I hate {{args}}!",
+    "bot": "This bot is currently under development. It is written in NodeJS by yours truly and froggo. For more info visit https://github.com/jason-shepherd/twitchbot",
+    "github" : "For a lesson on what not to do check out: https://github.com/jason-shepherd/",
+    "youtube" : "For some shitty content check out: https://www.youtube.com/channel/UC4C4AsZu4SIBTUrHFRuiJ5Q",
+    "discord" : "To chat with me and some other hooligans join our discord server! https://discord.com/invite/uDcfgXp",
+    "twitch" : "You are already on my twitch channel. {{user}} are you drunk or something?"
 }

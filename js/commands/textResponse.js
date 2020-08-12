@@ -14,3 +14,5 @@ exports.execute = (twitch, command, args, context) => {
     response = stringParser(response, toParse);
     twitch.say(response);
 }
+
+exports.textResponses = responses;
