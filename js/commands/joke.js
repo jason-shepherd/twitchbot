@@ -1,37 +1,24 @@
-const request = require("request");
 //TODO: Possibly add args to the command
-//TODO: Add line breaks
-//TODO: make it work
-//Sometimes just doesnt work
+
+//request module used to get jokes from jokeapi
+const request = require("request");
+
+//jokeapi url
+const jokeapi = "https://sv443.net/jokeapi/v2/joke/Programming,Miscellaneous,Pun?blacklistFlags=nsfw,religious,political,racist,sexist";
+const options = {json: true};
+
 exports.execute = (twitch, command, args, context, commands) => {
-    //url for api
-  var jokeapi =
-    "https://sv443.net/jokeapi/v2/joke/Programming,Miscellaneous,Pun?blacklistFlags=nsfw,religious,political,racist,sexist";
-    //request the webpage
-  request(jokeapi, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      //get data
-      var data = JSON.parse(body); console.log(body);
-
-      //<--start setup joke-->
-      //set up variables for joke; each joke is seperated into two variables
-      var setup = ""; var delivery = "";
-      
-      //check if values are undefined and if they are define them 
-        setup = data.setup;
-        delivery = data.delivery;
-
-      //<--end setup joke-->
-
-      //tell the joke in twitch chat
-      if(setup == undefined || data == undefined) {
-          twitch.say('error');
-      } else {  twitch.say(`${setup} ${delivery}`);}
-      
-
-    } else {
-        //an error has occured
-      console.log(error); twitch.say(`an error has occured when attempting to get a joke :(`);
-    }
-  });
+    request(jokeapi, options, (error, response, body) => {
+        if (!error && response.statusCode == 200) {
+            let joke = "";
+            //Some jokes are formatted differently, so we check which format it's using
+            if(body.joke === undefined)
+                joke = `${body.setup} ${body.delivery}`
+            else
+                joke = body.joke;
+            twitch.say(joke);
+        } else {
+            console.log(error); twitch.say(`An error has occured when attempting to get a joke :(. Please try again later.`);
+        }
+    });
 };
