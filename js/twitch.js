@@ -20,6 +20,7 @@ module.exports = (config) => {
 
     return {
         onmessage: client.on.bind(client, 'message'),
-        say: client.say.bind(client, config.channel)
+        say: client.say.bind(client, config.channel),
+        timeout: client.timeout.bind(client, config.channel)
     }
 }
