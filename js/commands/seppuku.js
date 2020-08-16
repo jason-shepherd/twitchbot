@@ -1,3 +1,6 @@
-const time = 60; //seconds  //TODO: fix big boss man says this is "janky"
+const time = 60; //seconds
 exports.execute = (twitch, command, args, context, commands) => { 
-    twitch.say(`/timeout ${context.username} ${time}`); }
+    twitch.timeout(context.username, time, "Commited seppuku").then((data) => {
+        twitch.say(`${context.username} has committed seppuku. It was an honorable death.`);
+    }).catch((err) => {twitch.say(err)});
+}

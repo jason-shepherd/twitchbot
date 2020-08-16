@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jason-shepherd/twitchbot#readme",
   "dependencies": {
+    "tmi": "^2.0.0",
     "tmi.js": "^1.5.0"
   }
 }
