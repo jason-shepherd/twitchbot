@@ -8,5 +8,5 @@ const prefix = "!";
 twitch.onmessage((channel, context, msg, self) => {
     if(self) return;
     let command = parser(msg, prefix);
-    commands.executesCommand(twitch, command.command, command.args, context);
+    commands.executesCommand(twitch, command, context);
 });

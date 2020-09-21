@@ -1,5 +1,3 @@
-//TODO: Possibly add args to the command
-
 const parser = require("../parseVariable");
 //request module used to get jokes from jokeapi
 const request = require("request");
@@ -9,9 +7,9 @@ const options = {json: true};
 const jokeapi = "https://sv443.net/jokeapi/v2/joke/{{catagories}}?blacklistFlags=nsfw,racist";
 let catagories = "Programming,Miscellaneous,Pun";
 
-exports.execute = (twitch, command, args, context, commands) => {
-   if(args.length)
-      catagories = args;  
+exports.execute = (twitch, command, context, commands) => {
+   if(command.args.length)
+      catagories = command.args;  
    request(parser(jokeapi, {catagories: catagories}), options, (error, response, body) => {
        if (!body.error && response.statusCode == 200) {
            let joke = "";

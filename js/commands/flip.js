@@ -1,8 +1,8 @@
-exports.execute = (twitch, command, args, context, commands) => {
+exports.execute = (twitch, command, context, commands) => {
     if(Math.round(Math.random())  == 1) {
-        twitch.say("heads"); return;
+        twitch.say("Heads"); return;
     } else {      
-        twitch.say("tails"); return;
+        twitch.say("Tails"); return;
     }
 
 }

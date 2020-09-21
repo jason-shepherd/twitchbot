@@ -5,11 +5,11 @@ exports.isTextResponse = (command) => {
     return !!responses[command];
 }
 
-exports.execute = (twitch, command, args, context) => {
-    let response = responses[command];
+exports.execute = (twitch, command, context) => {
+    let response = responses[command.command];
     let toParse = {
         user: context.username,
-        args: args
+        args: command.args
     };
     response = stringParser(response, toParse);
     twitch.say(response);
