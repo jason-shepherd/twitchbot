@@ -3,7 +3,7 @@
     "hi": "Hi there, {{user}}. HeyGuys",
     "hey": "Hello there, {{user}}. HeyGuys",
     "gg" : "gg <3",
-    "!hate" : "I hate {{args}}! TableHere FlipThis",
+    "!hate" : "I hate {{args}}! (╯°□°)╯︵ ┻━┻",
     "!bot": "This bot is currently under development. It is written in NodeJS by yours truly and froggo. For more info visit https://github.com/jason-shepherd/twitchbot",
     "!github" : "For a lesson on what not to do check out: https://github.com/jason-shepherd/",
     "!youtube" : "For some shitty content check out: https://www.youtube.com/channel/UC4C4AsZu4SIBTUrHFRuiJ5Q",
