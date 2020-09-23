@@ -1,6 +1,8 @@
 const responses = require("./textResponses.json");
 const stringParser = require("../parseVariable");
 
+exports.helpText = "HEY! You weren't supposed to do that...";
+
 exports.isTextResponse = (command) => {
     return !!responses[command];
 }

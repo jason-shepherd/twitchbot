@@ -7,6 +7,8 @@ const options = {json: true};
 const jokeapi = "https://sv443.net/jokeapi/v2/joke/{{catagories}}?blacklistFlags=nsfw,racist";
 let catagories = "Programming,Miscellaneous,Pun";
 
+exports.helpText = "Lemme tell you a funny joke! Do !joke <catagory> to specify a catagory. The valid catagories are " + catagories;
+
 exports.execute = (twitch, command, context, commands) => {
    if(command.args.length)
       catagories = command.args;  

@@ -20,6 +20,8 @@ const responses = [
     "You may rely on it."
 ];
 
+exports.helpText = "Ask the magic 8ball a question and it will predict an answer!";
+
 exports.execute = (twitch, command, context, commands) => {
     twitch.say(responses[Math.floor(Math.random() * (responses.length - 1))].toString());
 }
