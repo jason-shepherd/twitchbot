@@ -20,6 +20,7 @@ exports.execute = (twitch, command, context, commands) => {
         });
         twitch.say(helpText + " For more info on a command do !help <command>");
     } else {
-        twitch.say("Invalid Parameters. Please try again with different parameters!");
+        return "invalid_parameters";
     }
+    return true;
 }

@@ -6,5 +6,5 @@ exports.execute = (twitch, command, context, commands) => {
     } else {      
         twitch.say("Tails"); return;
     }
-
+    return true;
 }

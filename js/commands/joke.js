@@ -22,7 +22,8 @@ exports.execute = (twitch, command, context, commands) => {
                joke = body.joke;
            twitch.say(joke);
        } else {
-           twitch.say(`${body.message} :(.`);
+           return "failed_api";
        }
    });
+    return true;
 };

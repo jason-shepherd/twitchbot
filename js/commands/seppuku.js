@@ -5,5 +5,6 @@ exports.helpText = "Commit seppuku after an embarrassing defeat. (Times you out 
 exports.execute = (twitch, command, context, commands) => { 
     twitch.timeout(context.username, time, "Commited seppuku").then((data) => {
         twitch.say(`${context.username} has committed seppuku. It was an honorable death.`);
-    }).catch((err) => {twitch.say(err)});
+    }).catch((err) => {return "invalid_target"});
+    return true;
 }
