@@ -1,6 +1,11 @@
 exports.helpText = "Really. Asking for help on a help command. smh my head. :(";
 
 exports.execute = (twitch, command, context, commands) => {
+    
+    for(i=0; i<command.args.length; i++) {
+        command.args[i] = command.args[i].toLowerCase();
+    }
+
     if(command.args.length > 0) {
         if(!commands.textresponse.isTextResponse(command.args[0]) && !!commands[command.args[0]])
             twitch.say(commands[command.args[0]].helpText);
